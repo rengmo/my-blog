@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用Node.js实现文件分片上传和断点续传</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <h1>用Node.js实现文件分片上传和断点续传</h1>
+  <div>
+    <input type="file" name="file" id="fileUpload"/>
+    <input type="button" value="上传文件" id="uploadButton"/>
+    <input type="button" value="暂停上传" id="toggleButton"/>
+  </div>
+  <div class="upload-progress">
+    上传进度：<progress value="0" max="100" id="uploadProgress">50%</progress>
+    <span id="progressText">0%</span>
+  </div>
+  <script src="https://cdn.bootcss.com/jsSHA/2.3.1/sha_dev.js"></script>
+  <script src="./upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+h1 {
+  font-size: 20px;
+  color: green;
+}
+.upload-progress {
+  font-size: 12px;
+  padding: 20px 0;
+  color: orange;
+}
