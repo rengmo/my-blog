@@ -1,0 +1,23 @@
+.caculate-table {
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid black;
+}
+.operation-name {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  background-color: orange;
+  border-radius: 50%;
+  margin: 8px;
+}
+.operation-name.avaibalbe {
+  cursor: pointer;
+  background-color: green;
+}
