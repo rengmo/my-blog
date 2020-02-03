@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用Node、MySQL、JavaScript实现一个简陋的购物Demo</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <article class="container">
+    <div class="tabs">
+      <div data-tab="shop" id="shop" class="tab">商店</div>
+      <div data-tab="cart" id="cart" class="tab">购物车</div>
+      <div data-tab="orders" id="orders" class="tab">我的订单</div>
+    </div>
+    <!-- 商店 -->
+    <section id="shopContent" class="content">
+      <div>
+        <select class="select-input" id="selectUser">
+        </select>
+      </div>
+      <div class="commodities-list" id="commoditiesList">
+      </div>
+      <div id="cartButton" class="cart-button" >
+        <div class="commodities-quantity">0</div>
+        <div class="cart-icon">🛒</div>
+      </div>
+    </section>
+    <!-- 购物车 -->
+    <section id="cartContent" class="content">
+      <div id="receiverInfo" class="receiver-info">
+      </div>
+      <div class="rectangle-commodities-list" id="cartCommoditiesList">
+      </div>
+      <div class="cart-footer">
+        <div class="footer-total-price" id="cartTotalPrice"></div>
+        <div class="purchase-button" id="purchaseButton">购买</div>
+      </div>
+    </section>
+    <!-- 我的订单 -->
+    <section id="ordersContent" class="content">
+      <div class="receiver-info" id="orderReceiverInfo">
+      </div>
+      <div class="orders-list" id="ordersList">
+      </div>
+    </section>
+  </article>
+  <script src="./index.js"></script>
+</body>
+</html>

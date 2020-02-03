@@ -235,7 +235,7 @@ function handleSuccess (data, res) {
   res.end(JSON.stringify(returnObj));
 }
 
-// 更具相对地址得到绝对地址
+// 根据相对地址得到绝对地址
 function getAbsolutePath (path) {
   // 这里只处理了路径为'./upload/...'这种情况
   const pathName = path.substr(1);
