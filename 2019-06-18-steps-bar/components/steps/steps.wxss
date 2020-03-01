@@ -1,0 +1,29 @@
+.steps-line {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 1;
+}
+.description {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: -34rpx;
+  z-index: 10;
+  min-height: 120rpx;
+}
+.steps-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.step-name {
+  width: 170rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+  text-align: center;
+}

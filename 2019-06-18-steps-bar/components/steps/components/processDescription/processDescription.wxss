@@ -1,0 +1,45 @@
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: stretch;
+  height: 100%;
+  width: 170rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+.content {
+  background-color: green;
+  color: #fff;
+  font-size: 28rpx;
+  width: 100%;
+  border-radius: 4rpx;
+  flex: 1;
+  padding: 6rpx;
+}
+.triangle {
+  align-self: center;
+  margin-top: -10rpx;
+  width: 0;
+  height: 0;
+  border: 10rpx solid green;
+  border-color: transparent green green transparent;
+  transform: rotate(45deg);
+}
+.dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: green;
+  margin-top: 30rpx;
+  align-self: center;
+}
+.description-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.hide-description {
+  visibility: hidden;
+}

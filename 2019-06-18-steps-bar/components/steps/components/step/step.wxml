@@ -1,0 +1,7 @@
+<view class="step {{stateClass}}">
+  <view class="left-line" wx:if="{{type!==0}}"></view>
+  <view class="center">
+    <text class="center-text">{{stepText}}</text>
+  </view>
+  <view class="right-line" wx:if="{{type!==2}}"></view>
+</view>

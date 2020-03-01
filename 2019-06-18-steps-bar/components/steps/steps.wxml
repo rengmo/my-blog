@@ -1,0 +1,15 @@
+<view>
+  <view class="description">
+    <block wx:for="{{description}}" wx:key="index" wx:for-item="item" >
+      <process-description hide="{{item.hide}}" text="{{item.text}}"/>
+    </block>
+  </view>
+  <view class="steps-line">
+    <block wx:for="{{steps}}" wx:key="index" wx:for-item="item" >
+      <step-component type="{{item.type}}" state="{{item.state}}" stepText="{{item.text}}"/>
+    </block>
+  </view>
+  <view class="steps-names">
+    <view class="step-name" wx:for="{{stepsNames}}" wx:for-item="item" wx:key="index}}">{{item}}</view>
+  </view>
+</view>

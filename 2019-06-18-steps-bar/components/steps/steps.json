@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "process-description": "./components/processDescription/processDescription",
+    "step-component": "./components/step/step"
+  }
+}

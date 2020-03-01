@@ -1,0 +1,7 @@
+<view class="{{hide ? 'hide-description description': 'description'}}">
+  <view class="content">
+    <text class="description-text">{{text}}</text>
+  </view>
+  <view class="triangle"></view>
+  <view class="dot"></view>
+</view>

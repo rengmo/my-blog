@@ -1,0 +1,39 @@
+.step {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.state1 .left-line {
+  background-color: green;
+}
+.state2 .left-line, 
+.state2 .right-line {
+  background-color: green;
+}
+.state2 .center {
+  background-color: green;
+}
+.left-line {
+  width: 50rpx;
+  height: 5rpx;
+  background-color: #999;
+}
+.right-line {
+  width: 50rpx;
+  height: 5rpx;
+  background-color: #999;
+}
+.center {
+  display: flex;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #999;
+  margin: 0 10rpx;
+}
+.center-text {
+  margin: auto;
+}
+
