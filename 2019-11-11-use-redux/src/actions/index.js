@@ -5,7 +5,7 @@ export const SUBTRACT_NUMBER = 'SUBTRACT_NUMBER'
 export const MULTIPLY_NUMBER = 'MULTIPLY_NUMBER'
 
 export const REQUEST_LEADERBOARD = 'REQUEST_LEADERBOARD'
-export const RECEIVE_LEADERBOARD = 'REQUEST_LEADERBOARD'
+export const RECEIVE_LEADERBOARD = 'RECEIVE_LEADERBOARD'
 
 export const addNumber = number => ({
   type: ADD_NUMBER,
@@ -29,13 +29,13 @@ const requestLeaderBoard = () => ({
 
 const receiveLeaderBoard = (json) => ({
   type: RECEIVE_LEADERBOARD,
-  leaderboard: json.data
+  leaderboard: json
 })
 
 export function fetchLeaderBoard () {
   return dispatch => {
     dispatch(requestLeaderBoard())
-    return fetch(`这里用一个get请求的地址`)
+    return fetch(`http://localhost:3000/testData.json`)
       .then(res => res.json())
       .then(json => dispatch(receiveLeaderBoard(json)))
   }

@@ -1,0 +1,15 @@
+.common-button {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-image: url('~@/assets/images/hetian.png');
+  background-position: center center;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  &:first-child {
+    margin-left: 0;
+  }
+}

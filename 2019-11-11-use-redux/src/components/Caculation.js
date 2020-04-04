@@ -81,7 +81,7 @@ export default class Caculation extends Component {
                   return (
                     <div key={id}>
                       <span className="operation-name">{name}</span>
-                      <input className="operation-number" type="number" value={this.state[inputValueName]} onChange={this.handleChange.bind(this, inputValueName)}/>
+                      <input className="operation-number" type="number" value={this.state[inputValueName] || ''} onChange={this.handleChange.bind(this, inputValueName)}/>
                       <span className="operation-name avaibalbe" onClick={this[handler]}>=</span>
                     </div>
                   )
