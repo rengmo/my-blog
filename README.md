@@ -7,3 +7,12 @@
 5. [学习在React项目中使用Redux](https://juejin.im/post/5dc82bfee51d4523815886c9)。
 6. [使用Node、MySQL、JavaScript实现一个简陋的购物Demo](https://juejin.im/post/5e3446e76fb9a02ff44f6e91)。
 
+7. 使用Webpack等搭建一个适用于React项目的脚手架
+
+   + [使用Webpack等搭建一个适用于React项目的脚手架（1 - React、TypeScript）](https://juejin.im/post/5e8b3e626fb9a03c546c2e60)
+   + [使用Webpack等搭建一个适用于React项目的脚手架（2 - React Router、Redux、Sass）](https://juejin.im/post/5e8b3f7ef265da47a927ec82)
+   + [使用Webpack等搭建一个适用于React项目的脚手架（3 - Eslint、Jest）](https://juejin.im/post/5e8b4004f265da480a1aaaba)
+   + [使用Webpack等搭建一个适用于React项目的脚手架（4 - 优化）](https://juejin.im/post/5e8b40766fb9a03c75753fcd)
+   + [使用Webpack等搭建一个适用于React项目的脚手架（5 - 脚手架）](https://juejin.im/post/5e8b40dcf265da47e02a7613)
+
+   

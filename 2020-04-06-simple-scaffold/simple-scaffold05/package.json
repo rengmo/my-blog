@@ -1,0 +1,24 @@
+{
+  "name": "@lana-rm/create-app",
+  "version": "0.0.4",
+  "description": "a simple scaffold for creating react app.",
+  "main": "index.js",
+  "bin": {
+    "create-app": "bin/main.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "任沫",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^9.0.0",
+    "ora": "^4.0.3"
+  }
+}
