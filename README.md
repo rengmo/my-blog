@@ -17,4 +17,10 @@
 
 8. [学习ES模块、CommonJS、AMD、UMD、SystemJS](https://juejin.im/post/6870141103958589454)
 
-   
+9. TypeScript学习笔记
+   + [《TypeScript学习笔记-1-基础类型、字面量类型、类型声明》](https://juejin.im/post/6887561064129986567)
+   +   [《TypeScript学习笔记-2-联合类型&交叉类型、泛型、类型守卫、类型推断》](https://juejin.im/post/6887952824031068174)
+   + [《TypeScript学习笔记-3-枚举、函数、类、装饰器》](https://juejin.im/post/6890127597435682829)
+   + [《TypeScript学习笔记-4-模块、命名空间》](https://juejin.im/post/6892768302209171463/)
+   + [《TypeScript学习笔记-5-tsc指令、TS配置、部分更新功能、通用类型》](https://juejin.im/post/6892781570545942541/)
+
