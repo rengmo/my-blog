@@ -419,4 +419,54 @@ const p1: P = {
   m2: 2,
 }
 
+function s({ m1, m2 }) {
+  const arr = m1.split(', '); // 字符串对象有split方法
+  const str = m2.toFixed(2); // 数字对象有toFixed方法
+  console.log(arr, str);
+}
+
+/* 解法1
+interface S {
+  m1: string;
+  m2: number;
+}
+
+function s({ m1, m2 }: S): void {
+  const arr = m1.split(', '); // 字符串对象有split方法
+  const str = m2.toFixed(2); // 数字对象有toFixed方法
+  console.log(arr, str);
+}
+
+const s1 = {
+  m1: 'a, b, c',
+  m2: 1.034
+}
+
+s(s1);
+*/
+
+/* 解法2
+interface S1 {
+  m1: string;
+  m2: number;
+}
+
+interface S2 {
+  (x: S1): void;
+}
+
+const s: S2 = ({ m1, m2 }) => {
+  const arr = m1.split(', '); // 字符串对象有split方法
+  const str = m2.toFixed(2); // 数字对象有toFixed方法
+  console.log(arr, str);
+}
+
+const s1 = {
+  m1: 'a, b, c',
+  m2: 1.034
+}
+
+s(s1);
+*/
+
 console.log(a, b, b1, b2, b3, c, c1, c2, d, d1, d2, g, h, h1, k, k1, l, l1, n, o, o1, o2, Q11, q11, Q19, r, r2);

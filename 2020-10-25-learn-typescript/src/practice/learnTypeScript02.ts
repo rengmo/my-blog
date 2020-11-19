@@ -231,6 +231,28 @@
   window.onload = (): void => {
     console.log('d');
   };
+/*
+  // 假装x是用来放接口返回的数据的变量，它初始值为空对象{}，我们不知道接口返回的数据会是什么，所以给它的类型是unknown
+  let x: unknown = {};
 
+  class E {
+    m1: string;
+    m2: number;
+  }
+
+  function requestData (response: unknown): void {
+    x = response;
+    if (x instanceof E) {
+      s(x);
+    }
+  }
+
+  function s({ m1, m2 }: E): void {
+    const arr = m1.split(', '); // 字符串对象有split方法
+    const str = m2.toFixed(2); // 数字对象有toFixed方法
+    console.log(arr, str);
+  }
+*/
+  
   console.log(a, a1, a2, a3, a4, a6, a7, a8, a9, b1, b2, b3, b4, b7, b8, b9, B6, c, c1, c2, c3, );
 })();
