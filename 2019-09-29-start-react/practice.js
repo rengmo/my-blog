@@ -37,14 +37,19 @@ function TodoItem (props) {
 
 function TodoList (props) {
   const { list } = props;
-  // 这里一开始定的completeItems的数据格式是数组，不止为何使用setCompleteItemsState的时候，completeItems的值也变了，但是组件中的completeItems仍然为空
-  // 所以就换成字符串的格式了
-  const [ completeItems, setCompleteItemsState ] = useState('');
+  const [ completeItems, setCompleteItemsState ] = useState([]);
+  useEffect(() => {
+    // 更新文档的title
+    document.title = completeItems.join();
+    return () => {
+      document.title = '清单';
+    }
+  });
   const setCompleteItems = (completedItem) => {
-    // 使用useState设置completeItems的值为数组没有生效，于是换成使用字符串，还需要手动组合一下字符串
-    let completeItemsText = completeItems;
-    completeItemsText = completeItems + (completeItemsText ? '，' + completedItem : completedItem);
-    setCompleteItemsState(completeItemsText);
+    setCompleteItemsState([...completeItems, completedItem]);
+  };
+  const unmountComponent = () => {
+    ReactDOM.unmountComponentAtNode(document.getElementById('root'));
   };
   let todoList = list.map((item) => <TodoItem content={item} setCompleteItems={setCompleteItems}/>);
   return (
@@ -52,7 +57,8 @@ function TodoList (props) {
       <ul className="todo-list">
         {todoList}
       </ul>
-      <p>已完成: {completeItems}</p>
+      <p>已完成: {completeItems.join()}</p>
+      <p onClick={unmountComponent}>点此手动卸载组件</p>
    </div>
   )
 }
