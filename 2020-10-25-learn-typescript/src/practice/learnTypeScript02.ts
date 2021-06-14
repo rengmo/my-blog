@@ -50,6 +50,7 @@
 
   interface A7 {
     m4: string;
+    m3: string;
   }
 
   type A8 = A5 & A6 & A7;
@@ -59,6 +60,14 @@
 
     console.log(m1, m2, m3, m4);
   }
+  const x123 = {
+    m1: 1,
+    m2: '1',
+    m3: 1,
+    m4: '1',
+  };
+
+  // a3(x123);
 
   function a4(x: string): string {
     return x;

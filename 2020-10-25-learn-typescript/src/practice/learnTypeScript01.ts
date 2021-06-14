@@ -167,7 +167,13 @@ interface Q {
 
 interface Q1 {
   (y: Q): Q;
+  (x: Q, y: string): Q;
 }
+
+interface Q123 {
+  (x: Q, y: string): Q;
+}
+
 
 const q: Q1 = function q (x) {
   const { m1, m2 } = x;
@@ -175,6 +181,10 @@ const q: Q1 = function q (x) {
     m1: m1 + m2,
     m2: m1 - m2,
   };
+}
+
+const q123: Q1 = function q (x: Q, y: string): Q {
+  return x;
 }
 
 // function q (
