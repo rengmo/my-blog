@@ -1,5 +1,7 @@
 此仓库用于存放博客中提到的练习代码，以下为博客地址：
 
++ [Django单元测试](https://juejin.cn/post/7016687269503303710/)
+
 + [Django入门](https://juejin.cn/post/7015896897378320391)
 + [一些常用的Python基础方法](https://juejin.cn/post/6993524865298857991)
 
