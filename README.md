@@ -1,5 +1,9 @@
 此仓库用于存放博客中提到的练习代码，以下为博客地址：
 
++ [Go语言中的结构体](https://juejin.cn/post/7126550164717699109)
+
++ [Go语言中的goroutine和通道](https://juejin.cn/post/7103907668955250702)
+
 + [Go语言中的指针](https://juejin.cn/post/7100166142974492679)
 
 + [Go语言中的反射](https://juejin.cn/post/7097534989029343246)
