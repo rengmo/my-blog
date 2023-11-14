@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rdl-redis
+spec:
+  selector:
+    matchLabels:
+      app: rdl-redis
+  template:
+    metadata:
+      labels:
+        app: rdl-redis
+    spec:
+      containers:
+      - name: rdl-redis
+        image: redis:7.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6379

@@ -1,5 +1,7 @@
 此仓库用于存放博客中提到的练习代码，以下为博客地址：
 
++ [Redis分布式锁](https://juejin.cn/post/7301242469936185395)
+
 + [Go语言中的结构体](https://juejin.cn/post/7126550164717699109)
 
 + [Go语言中的goroutine和通道](https://juejin.cn/post/7103907668955250702)
@@ -21,7 +23,7 @@
 + [Python中几个日期相关的使用](https://juejin.cn/post/6973570780357459975)
 
 + TypeScript学习笔记
-  
+
   + [《TypeScript学习笔记-1-基础类型、字面量类型、类型声明》](https://juejin.im/post/6887561064129986567)
   + [《TypeScript学习笔记-2-联合类型&交叉类型、泛型、类型守卫、类型推断》](https://juejin.im/post/6887952824031068174)
   + [《TypeScript学习笔记-3-枚举、函数、类、装饰器》](https://juejin.im/post/6890127597435682829)
@@ -31,7 +33,7 @@
 + [学习ES模块、CommonJS、AMD、UMD、SystemJS](https://juejin.im/post/6870141103958589454)
 
 + 使用Webpack等搭建一个适用于React项目的脚手架
-  
+
   + [使用Webpack等搭建一个适用于React项目的脚手架（1 - React、TypeScript）](https://juejin.im/post/5e8b3e626fb9a03c546c2e60)
   + [使用Webpack等搭建一个适用于React项目的脚手架（2 - React Router、Redux、Sass）](https://juejin.im/post/5e8b3f7ef265da47a927ec82)
   + [使用Webpack等搭建一个适用于React项目的脚手架（3 - Eslint、Jest）](https://juejin.im/post/5e8b4004f265da480a1aaaba)

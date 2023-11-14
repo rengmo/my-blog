@@ -1,0 +1,43 @@
+# 按照apps/v1的方式处理这个配置
+apiVersion: apps/v1
+# 配置的类型是Deployment
+kind: Deployment
+# 元数据
+metadata:
+  # 名称
+  name: rdl
+# specification 规范说明
+spec:
+  # 表示运行2个Pod
+  replicas: 2
+  # 选择器
+  selector:
+    # 选择包含以下标签的Pod
+    matchLabels:
+      app: rdl
+  # 模板表示如何创建Pod
+  # 比如以下内容就表示创建包含标签app:rdl, 容器rengmo/rdl:v0.0.1, 有一定资源大小限制, 容器监听的端口号是8080的Pod
+  template:
+    # Pod的元数据
+    metadata:
+      # 包含标签app: rdl
+      labels:
+        app: rdl
+    # 规范说明
+    spec:
+      # 包含的容器
+      containers:
+      # 容器的名称
+      - name: rdl
+        # 容器中包含的镜像
+        image: rengmo/rdl:v0.0.1
+        # 资源的配置
+        # resources:
+        #   # 限制使用资源的大小
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # 端口号
+        ports:
+        # 容器中的镜像，也就是rengmo/rdl:v0.0.1监听的端口号
+        - containerPort: 8080

@@ -1,0 +1,21 @@
+# 按照v1的方式处理这个配置
+apiVersion: v1
+# 配置的类型是Service
+kind: Service
+# 元数据
+metadata:
+  # 配置的名称为rdl
+  name: rdl
+# 规范说明
+spec:
+  # 选择标签为app: rdl的Pod
+  selector:
+    app: rdl
+  # 端口号
+  ports:
+  # 外部访问的端口
+  - port: 8080
+  # 内部pod使用的端口
+    targetPort: 8080
+  # 使用k8s的负载均衡器提供外部可访问的IP地址
+  type: LoadBalancer
