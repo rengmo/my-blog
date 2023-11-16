@@ -1,5 +1,7 @@
 此仓库用于存放博客中提到的练习代码，以下为博客地址：
 
++ [Redis和MySQL双写一致性](https://juejin.cn/post/7301951271232618505)
+
 + [Redis分布式锁](https://juejin.cn/post/7301242469936185395)
 
 + [Go语言中的结构体](https://juejin.cn/post/7126550164717699109)
