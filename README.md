@@ -1,5 +1,9 @@
 此仓库用于存放博客中提到的练习代码，以下为博客地址：
 
++ [排序与查找(Go实现)](https://juejin.cn/post/7311602994582503462)
+
++ [Go中的深拷贝和浅拷贝](https://juejin.cn/post/7311602994571968539)
+
 + [Redis和MySQL双写一致性](https://juejin.cn/post/7301951271232618505)
 
 + [Redis分布式锁](https://juejin.cn/post/7301242469936185395)
