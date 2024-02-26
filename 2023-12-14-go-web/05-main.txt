@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.MaxMultipartMemory = 8 << 20 // 限制 multipart/form-data 的请求的请求体最大为8M
+	r.POST("/upload", func(c *gin.Context) {
+		file, _ := c.FormFile("file")
+		log.Println(file.Filename)
+		// 将文件上传到当前目录的files文件夹下
+		c.SaveUploadedFile(file, "./files/"+file.Filename)
+		c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
+	})
+	r.Run()
+}

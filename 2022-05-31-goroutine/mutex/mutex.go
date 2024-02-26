@@ -1,37 +1,42 @@
-package main
+package mutex
 
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
-func main() {
-	c := SafeCounter{v: make(map[string]int)}
-	for i := 0; i < 1000; i++ {
-		go c.Inc("somekey")
+var wg sync.WaitGroup
+
+func init() {
+	counter := Counter{
+		val: make(map[string]int),
 	}
-	time.Sleep(time.Second)
-	fmt.Println(c.Value("somekey"))
+
+	wg.Add(100)
+	for i := 0; i < 100; i++ {
+		go counter.Increase("somekey")
+	}
+
+	wg.Wait()
+	fmt.Println(counter.Value("somekey"))
 }
 
-type SafeCounter struct {
-	mu sync.Mutex
-	v  map[string]int
+type Counter struct {
+	mu  sync.Mutex
+	val map[string]int
 }
 
-// 使用给定的key递增计数器
-func (c *SafeCounter) Inc(key string) {
+func (c *Counter) Increase(key string) {
 	c.mu.Lock()
-	// 锁住之后，一次只能有一个goroutine可以访问映射c.v
-	c.v[key]++
-	c.mu.Unlock()
-}
-
-// 返回 给定key的 计数器的当前值
-func (c *SafeCounter) Value(key string) int {
-	c.mu.Lock()
-	// 锁住之后，一次只能有一个goroutine可以访问映射c.v
 	defer c.mu.Unlock()
-	return c.v[key]
+	defer wg.Done()
+
+	c.val[key]++
+}
+
+func (c *Counter) Value(key string) int {
+	// 这里也可以换成用RWMutex，只锁写，不锁读
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	return c.val[key]
 }

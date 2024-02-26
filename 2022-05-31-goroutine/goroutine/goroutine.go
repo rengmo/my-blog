@@ -1,18 +1,18 @@
-package main
+package goroutine
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
-	go say("a")
-	say("b")
+func init() {
+	go say("world")
+	say("hello")
 }
 
 func say(s string) {
-	for i := 0; i < 5; i++ {
-		time.Sleep(2 * time.Second)
-		fmt.Println(s, time.Now().Format("15:04:05.000000"))
+	for i := 0; i < 3; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Printf("%v %v %v\n", s, i, time.Now().Format("15:04:05.000000"))
 	}
 }

@@ -1,0 +1,80 @@
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	/*
+		net/http
+	*/
+	// requestData()
+	// http.Handle("/hello", new(helloHandler))
+	// http.HandleFunc("/hello/v1", func(w http.ResponseWriter, r *http.Request) {
+	// 	fmt.Fprintf(w, "hello world!!\n")
+	// })
+
+	// log.Fatal(http.ListenAndServe(":8080", nil))
+
+	/*
+		net/http + httprouter
+	*/
+	// r := httprouter.New()
+	// r.Handle(http.MethodGet, "/hello", hello1)
+	// r.Handle(http.MethodPost, "/hello", hello2)
+
+	// log.Fatal(http.ListenAndServe(":8080", r))
+
+	/*
+		net/http + httprouter + gin
+	*/
+	r := gin.Default()
+	r.GET("/hello", helloA)
+	r.POST("/hello", helloB)
+	r.Run()
+}
+
+func helloA(c *gin.Context) {
+	c.String(http.StatusOK, "hello world!")
+}
+func helloB(c *gin.Context) {
+	c.String(http.StatusOK, "hello world!!!")
+}
+
+func hello1(w http.ResponseWriter, r *http.Request) error {
+	fmt.Fprintf(w, "hello world!\n")
+	return nil
+}
+func hello2(w http.ResponseWriter, r *http.Request) error {
+	fmt.Fprintf(w, "hello world!!!\n")
+	return nil
+}
+
+type helloHandler struct{}
+
+func (h *helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	method := r.Method
+	switch method {
+	case "GET":
+		fmt.Fprintf(w, "hello world!\n")
+	case "POST":
+		fmt.Fprintf(w, "hello world!!!\n")
+	}
+}
+
+func requestData() {
+	resp, err := http.Get("https://www.example.com/")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	fmt.Println(string(body), "===body===")
+	if err != nil {
+		panic(err)
+	}
+}

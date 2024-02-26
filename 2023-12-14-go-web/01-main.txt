@@ -1,0 +1,30 @@
+package main
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.GET("/echo", echo)
+	r.POST("/echo", echo)
+	r.Run()
+}
+
+type Person struct {
+	Name    string `form:"name" json:"name"`
+	Address string `form:"address" json:"address"`
+}
+
+func echo(c *gin.Context) {
+	var person Person
+	if c.ShouldBind(&person) == nil {
+		c.JSON(http.StatusOK, gin.H{
+			"data": person,
+		})
+		return
+	}
+	c.String(http.StatusInternalServerError, "Failed")
+}

@@ -1,0 +1,37 @@
+package main
+
+import (
+	"net/http"
+	"time"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	user := r.Group("/user")
+	{
+		user.POST("/login", login)
+		user.POST("/submit", submit)
+		user.POST("/read", read)
+	}
+	// r.Run()
+	s := &http.Server{
+		Addr:           ":8000",          // 服务监听的TCP地址
+		Handler:        r,                // 路由处理程序
+		ReadTimeout:    10 * time.Second, // 读整个请求的最大持续时间
+		WriteTimeout:   10 * time.Second, // 写响应的最大持续时间
+		MaxHeaderBytes: 1 << 20,          // 请求头的最大字节数
+	}
+	s.ListenAndServe()
+}
+
+func login(c *gin.Context) {
+	c.String(http.StatusOK, "登录")
+}
+func submit(c *gin.Context) {
+	c.String(http.StatusOK, "提交")
+}
+func read(c *gin.Context) {
+	c.String(http.StatusOK, "读取")
+}

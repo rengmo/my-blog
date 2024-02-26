@@ -1,0 +1,82 @@
+package main
+
+import (
+	"log"
+	"time"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.New()
+	r.Use(Logger(), Logger1(), Logger2())
+	r.GET("/test", func(c *gin.Context) {
+		example := c.MustGet("example").(string)
+		log.Println(example)
+	})
+	r.Run(":8080")
+}
+
+// 自定义的日志中间件
+func Logger() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		t := time.Now()
+
+		// 在中间件中设置example变量，这个变量可以在请求处理函数中使用
+		c.Set("example", "12345")
+
+		log.Println("===AAA-before===")
+
+		// 以c.Next为分界线，前面是请求前，后面是请求后
+		c.Next()
+
+		log.Println("===AAA-after===")
+		latency := time.Since(t)
+		log.Printf("花费时间 %v", latency)
+
+		status := c.Writer.Status()
+		log.Println(status)
+	}
+}
+
+func Logger1() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		t := time.Now()
+
+		// 在中间件中设置example变量，这个变量可以在请求处理函数中使用
+		c.Set("example", "12345")
+
+		log.Println("===BBB-before===")
+
+		// 以c.Next为分界线，前面是请求前，后面是请求后
+		c.Next()
+
+		log.Println("===BBB-after===")
+		latency := time.Since(t)
+		log.Printf("花费时间 %v", latency)
+
+		status := c.Writer.Status()
+		log.Println(status)
+	}
+}
+
+func Logger2() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		t := time.Now()
+
+		// 在中间件中设置example变量，这个变量可以在请求处理函数中使用
+		c.Set("example", "12345")
+
+		log.Println("===CCC-before===")
+
+		// 以c.Next为分界线，前面是请求前，后面是请求后
+		c.Next()
+
+		log.Println("===CCC-after===")
+		latency := time.Since(t)
+		log.Printf("花费时间 %v", latency)
+
+		status := c.Writer.Status()
+		log.Println(status)
+	}
+}
